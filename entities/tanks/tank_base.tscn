@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3grtvn207ubx"]
+
+[ext_resource type="Script" uid="uid://b8x4yeweujiq5" path="res://entities/tanks/tank_base.gd" id="1_8lnnp"]
+[ext_resource type="Texture2D" uid="uid://quqo5ii4rrmh" path="res://assets/Kenney_topdownTanks/Spritesheet/sheet_tanks.png" id="2_l1rtt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a662d"]
+atlas = ExtResource("2_l1rtt")
+region = Rect2(588, 0, 82, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lnnp"]
+size = Vector2(82, 82)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tagor"]
+atlas = ExtResource("2_l1rtt")
+region = Rect2(835, 0, 22, 58)
+
+[node name="TankBase" type="CharacterBody2D"]
+script = ExtResource("1_8lnnp")
+
+[node name="TankBody" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_a662d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8lnnp")
+
+[node name="TankTurret" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_tagor")
+offset = Vector2(0, -24)

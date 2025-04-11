@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0rgj45aul5li"]
+
+[ext_resource type="Script" uid="uid://thy0ba52yfqd" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Texture2D" uid="uid://quqo5ii4rrmh" path="res://assets/Kenney_topdownTanks/Spritesheet/sheet_tanks.png" id="2_abrql"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sglur"]
+atlas = ExtResource("2_abrql")
+region = Rect2(588, 0, 82, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abrql"]
+atlas = ExtResource("2_abrql")
+region = Rect2(835, 0, 22, 58)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_symyc")
+metadata/_custom_type_script = "uid://c2tbjaj1mnxbo"
+
+[node name="Sprite2DBody" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_sglur")
+
+[node name="Sprite2DBarrel" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_abrql")
+offset = Vector2(0, -24)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

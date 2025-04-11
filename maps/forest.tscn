@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=4 uid="uid://dai2fpvfwelxq"]
+
+[ext_resource type="Texture2D" uid="uid://quqo5ii4rrmh" path="res://assets/Kenney_topdownTanks/Spritesheet/sheet_tanks.png" id="1_rnahn"]
+[ext_resource type="PackedScene" uid="uid://buujrf88nbf6j" path="res://maps/obstacles/sandbag.tscn" id="2_8cang"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cang"]
+resource_name = "FloorTiles"
+texture = ExtResource("1_rnahn")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2i543"]
+tile_size = Vector2i(128, 128)
+sources/1 = SubResource("TileSetAtlasSource_8cang")
+
+[node name="Forest" type="Node2D"]
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAADAAEAAQAAAAAAAAADAAAAAQAAAAAAAAAEAAAAAQAAAAAAAAAFAAAAAQAAAAAAAAAGAAAAAQAAAAAAAAAHAAAAAQAAAAAAAAAIAAAAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAABAAMAAQAAAAAAAAABAAIAAQAAAAAAAAACAAIAAQAAAAAAAAACAAMAAQAAAAAAAAADAAMAAQAAAAAAAAAEAAMAAQAAAAAAAAAFAAMAAQAAAAAAAAAGAAMAAQAAAAAAAAAHAAMAAQAAAAAAAAAIAAMAAQAAAAAAAAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAACAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAFAAEAAQAAAAAAAAAEAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAFAAIAAQAAAAAAAAAGAAIAAQAAAAAAAAAGAAEAAQAAAAAAAAAHAAEAAQAAAAAAAAAHAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAIAAEAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_2i543")
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="Sandbag" parent="Obstacles" instance=ExtResource("2_8cang")]
+position = Vector2(196, 573)
+
+[node name="Sandbag2" parent="Obstacles" instance=ExtResource("2_8cang")]
+position = Vector2(195, 428)
+
+[node name="Sandbag3" parent="Obstacles" instance=ExtResource("2_8cang")]
+position = Vector2(194, 239)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://buujrf88nbf6j"]
+
+[ext_resource type="Texture2D" uid="uid://bj84ip8ur3k8" path="res://assets/Kenney_topdownTanks/PNG/Obstacles/sandbagBeige.png" id="1_wkk1w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i543"]
+size = Vector2(66, 44)
+
+[node name="Sandbag" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_wkk1w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2i543")

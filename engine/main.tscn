@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ooy4vbqvkqcr"]
+
+[ext_resource type="PackedScene" uid="uid://dai2fpvfwelxq" path="res://maps/forest.tscn" id="1_8fa7n"]
+[ext_resource type="PackedScene" uid="uid://d3grtvn207ubx" path="res://entities/tanks/tank_base.tscn" id="1_ymvtf"]
+[ext_resource type="Script" uid="uid://dd28omy5fwtjx" path="res://entities/tanks/classic_tank_controller.gd" id="2_mj7pq"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Forest" parent="." instance=ExtResource("1_8fa7n")]
+
+[node name="TankBase" parent="." instance=ExtResource("1_ymvtf")]
+position = Vector2(497, 244)
+script = ExtResource("2_mj7pq")
+turret_rotation_speed = 10.0
